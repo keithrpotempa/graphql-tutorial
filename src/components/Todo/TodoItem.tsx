@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Todos } from '../../generated/graphql';
+// import { Todos } from '../../generated/graphql';
 
 interface TodoItemType {
   index: number,
-  todo: Pick<Todos, "id" | "title" | "is_completed">;
+  todo: Pick<any, "id" | "title" | "is_completed">;
 };
 
 const TodoItem = ({index, todo}: TodoItemType) => {

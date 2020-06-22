@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import * as React from 'react';
-import { GetMyTodosQuery } from '../../generated/graphql';
+// import { GetMyTodosQuery } from '../../generated/graphql';
 
 interface filterResults {
   (filter: string): void
 }
 
 interface TodoFiltersArgs {
-  todos: GetMyTodosQuery["todos"],
+  todos: any,
   currentFilter: string,
   filterResultsFn: filterResults,
   clearCompletedFn: VoidFunction
@@ -31,7 +31,7 @@ const TodoFilters = ({
     </button>
   );
 
-  const activeTodos = todos.filter(todo => todo.is_completed !== true);
+  const activeTodos = todos.filter((todo: any) => todo.is_completed !== true);
 
   let itemCount = todos.length;
   if (currentFilter === 'active') {
